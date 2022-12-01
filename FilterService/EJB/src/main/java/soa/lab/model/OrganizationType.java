@@ -1,4 +1,4 @@
-package soa.lab.entity;
+package soa.lab.model;
 
 public enum OrganizationType {
     PUBLIC,

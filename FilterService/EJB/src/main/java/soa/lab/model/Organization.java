@@ -1,6 +1,5 @@
-package soa.lab.entity;
+package soa.lab.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 @Data

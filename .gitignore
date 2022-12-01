@@ -4,8 +4,8 @@
 *.iml
 *.ipr
 
-*/target
+**/target
 
-*/src/main/resources/
+**/src/main/resources/
 
 ssl

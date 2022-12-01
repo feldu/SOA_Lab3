@@ -1,5 +1,6 @@
 package soa.lab.exception;
 
+import jakarta.ejb.EJBException;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
@@ -29,7 +30,7 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
         return handleExceptionInternal(e, errorDTO, new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
     }
 
-    @ExceptionHandler(value = Exception.class)
+    @ExceptionHandler(value = {EJBException.class, Exception.class})
     protected ResponseEntity<Object> handleServer(RuntimeException e, WebRequest request) {
         log.error("{}: {}", e.getClass().getSimpleName(), e.getMessage());
         ErrorDTO errorDTO = new ErrorDTO(e.getMessage());
