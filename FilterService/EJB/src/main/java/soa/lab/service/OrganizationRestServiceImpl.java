@@ -1,5 +1,6 @@
 package soa.lab.service;
 
+import org.jboss.ejb3.annotation.Pool;
 import soa.lab.model.Organization;
 
 import javax.ejb.Stateless;
@@ -10,6 +11,7 @@ import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 @Stateless
+@Pool("slsb-strict-max-pool")
 public class OrganizationRestServiceImpl implements OrganizationRestService {
     private final String URL = "https://localhost:31510/orgs";
     private Client client;

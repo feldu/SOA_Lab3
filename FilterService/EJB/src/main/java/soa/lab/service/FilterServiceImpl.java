@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.extern.slf4j.Slf4j;
-import soa.lab.exception.DataNotFoundException;
+import org.jboss.ejb3.annotation.Pool;
 import soa.lab.model.Organization;
 
 import javax.ejb.EJB;
@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Stateless
+@Pool("slsb-strict-max-pool")
 public class FilterServiceImpl implements FilterService {
 
     @EJB
