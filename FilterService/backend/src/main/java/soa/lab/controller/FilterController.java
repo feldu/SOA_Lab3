@@ -27,7 +27,7 @@ public class FilterController {
         this.filterService = filterService;
     }
 
-    @CrossOrigin(origins = "https://localhost:31510")
+    @CrossOrigin(origins = "https://localhost:3151")
     @GetMapping("/filter/turnover/{min-annual-turnover}/{max-annual-turnover}")
     public ResponseEntity<List<Organization>> filterOrgsByTurnover(@PathVariable("min-annual-turnover") Float min, @PathVariable("max-annual-turnover") Float max) throws JsonProcessingException {
         log.info("Request to get orgs between {} and {} turnover values", min, max);
@@ -37,7 +37,7 @@ public class FilterController {
         return new ResponseEntity<>(orgs, HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "https://localhost:31510")
+    @CrossOrigin(origins = "https://localhost:3151")
     @GetMapping("/filter/employees/{min-employees-count}/{max-employees-count}")
     public ResponseEntity<List<Organization>> filterOrgsByEmployeesCount(@PathVariable("min-employees-count") Float min, @PathVariable("max-employees-count") Float max) throws JsonProcessingException {
         log.info("Request to get orgs between {} and {} employees count values", min, max);

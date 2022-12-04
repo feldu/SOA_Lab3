@@ -25,7 +25,7 @@ export const orgsState = observable({
 
         fetchOrgs(params) {
             axios
-                .get("https://localhost:31510/orgs", {params})
+                .get("https://localhost:3151/orgs", {params})
                 .then(response => {
                     this.orgs = response.data;
                     this.response = {isError: false, message: "Request successful"}
@@ -36,7 +36,7 @@ export const orgsState = observable({
 
         addOrgs(params) {
             axios
-                .post("https://localhost:31510/orgs", {...params, type: params.type === "" ? null : params.type})
+                .post("https://localhost:3151/orgs", {...params, type: params.type === "" ? null : params.type})
                 .then(response => {
                     this.orgs = [response.data];
                     this.response = {isError: false, message: "Request successful"}
@@ -47,7 +47,7 @@ export const orgsState = observable({
 
         updateOrgs(params) {
             axios
-                .put("https://localhost:31510/orgs", params)
+                .put("https://localhost:3151/orgs", params)
                 .then(response => {
                     this.orgs = [response.data];
                     this.response = {isError: false, message: "Request successful"}
@@ -58,7 +58,7 @@ export const orgsState = observable({
 
         getOrgById(pathVariable) {
             axios
-                .get(`https://localhost:31510/orgs/${pathVariable}`)
+                .get(`https://localhost:3151/orgs/${pathVariable}`)
                 .then(response => {
                     this.orgs = [response.data];
                     this.response = {isError: false, message: "Request successful"}
@@ -69,7 +69,7 @@ export const orgsState = observable({
 
         deleteOrgById(pathVariable) {
             axios
-                .delete(`https://localhost:31510/orgs/${pathVariable}`)
+                .delete(`https://localhost:3151/orgs/${pathVariable}`)
                 .then(response => {
                     this.orgs = [response.data];
                     this.response = {isError: false, message: "Request successful"}
@@ -80,7 +80,7 @@ export const orgsState = observable({
 
         deleteOrgsByAnal(params) {
             axios
-                .delete("https://localhost:31510/orgs/annualTurnover", {params})
+                .delete("https://localhost:3151/orgs/annualTurnover", {params})
                 .then(response => {
                     this.orgs = response.data;
                     this.response = {isError: false, message: "Request successful"}
@@ -91,7 +91,7 @@ export const orgsState = observable({
 
         getFilteredOrgsByAnal(pathVar1, pathVar2) {
             axios
-                .get(`https://localhost:31511/orgdirectory/filter/turnover/${pathVar1}/${pathVar2}`)
+                .get(`https://localhost:3152/orgdirectory/filter/turnover/${pathVar1}/${pathVar2}`)
                 .then(response => {
                     this.orgs = response.data;
                     this.response = {isError: false, message: "Request successful"}
@@ -102,7 +102,7 @@ export const orgsState = observable({
 
         getFilteredOrgsByEmployees(pathVar1, pathVar2) {
             axios
-                .get(`https://localhost:31511/orgdirectory/filter/employees/${pathVar1}/${pathVar2}`)
+                .get(`https://localhost:3152/orgdirectory/filter/employees/${pathVar1}/${pathVar2}`)
                 .then(response => {
                     this.orgs = response.data;
                     this.response = {isError: false, message: "Request successful"}
@@ -113,7 +113,7 @@ export const orgsState = observable({
 
         getOrgsGroupCntByAddress() {
             axios
-                .get("https://localhost:31510/orgs/group-count/by-address")
+                .get("https://localhost:3151/orgs/group-count/by-address")
                 .then(response => {
                     this.orgs = []
                     this.response = {isError: false, message: `Groups: ${response.data}`}
@@ -124,7 +124,7 @@ export const orgsState = observable({
 
         getOrgsWhereTypeGreaterThanGiven(params) {
             axios
-                .get("https://localhost:31510/orgs/type", {params})
+                .get("https://localhost:3151/orgs/type", {params})
                 .then(response => {
                     this.orgs = response.data;
                     this.response = {isError: false, message: "Request successful"}

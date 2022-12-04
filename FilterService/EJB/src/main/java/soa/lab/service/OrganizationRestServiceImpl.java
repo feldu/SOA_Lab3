@@ -13,7 +13,7 @@ import java.util.List;
 @Stateless
 @Pool("slsb-strict-max-pool")
 public class OrganizationRestServiceImpl implements OrganizationRestService {
-    private final String URL = "https://localhost:31510/orgs";
+    private final String URL = "https://localhost:3151/orgs";
     private Client client;
 
     @Override
